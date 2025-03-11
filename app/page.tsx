@@ -31,7 +31,7 @@ const CheckIcon = () => (
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false)
   const menuItems = [
-    { href: "#about", label: "ヨガの魅力" },,
+    { href: "#about", label: "ヨガの魅力" },
     { href: "#pricing", label: "料金プラン" },
     { href: "#instructors", label: "インストラクター" },
     { href: "#gallery", label: "ギャラリー" },
