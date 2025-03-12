@@ -53,9 +53,14 @@ export default function Home() {
             <Link href="#access" className="text-muted-foreground hover:text-foreground transition-colors">アクセス</Link>
           </nav>
           <Button className="hidden md:inline-flex">体験予約</Button>
-          <Sheet>
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="md:hidden"
+                onClick={() => setIsOpen(true)}
+              >
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">メニューを開く</span>
               </Button>
