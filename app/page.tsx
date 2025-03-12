@@ -5,6 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { MapPin, Calendar, Users, Menu } from "lucide-react"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { DialogTitle } from "@/components/ui/dialog"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -66,6 +67,7 @@ export default function Home() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
+              <DialogTitle>メニュー</DialogTitle>
               <nav className="flex flex-col space-y-4 mt-8">
                 {menuItems.map((item) => (
                   <a
