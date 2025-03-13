@@ -38,6 +38,18 @@ export default function Home() {
     { href: "#gallery", label: "ギャラリー" },
     { href: "#access", label: "アクセス" },
   ]
+
+  const galleryImages = [
+    { src: "/gallery1.jpg", alt: "スタジオの様子 1" },
+    { src: "/gallery2.jpg", alt: "スタジオの様子 2" },
+    { src: "/gallery3.jpg", alt: "スタジオの様子 3" },
+    { src: "/gallery4.jpg", alt: "スタジオの様子 4" },
+    { src: "/gallery5.jpg", alt: "スタジオの様子 5" },
+    { src: "/gallery6.jpg", alt: "スタジオの様子 6" },
+    { src: "/gallery7.jpg", alt: "スタジオの様子 7" },
+    { src: "/gallery8.jpg", alt: "スタジオの様子 8" },
+  ]
+
   return (
     <div className="flex min-h-screen flex-col">
       {/* ナビゲーションバー */}
@@ -85,14 +97,13 @@ export default function Home() {
         </div>
       </header>
 
-
       <main className="flex-1">
         {/* ヒーローセクション */}
         <section className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#8a9a5b]/30 to-[#e0e4cc]/30 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#8a9a5b]/40 to-[#e0e4cc]/40 z-10" />
           <div className="relative h-[70vh] w-full">
             <Image
-              src="/placeholder.svg?height=800&width=1600"
+              src="/hero.jpg?height=800&width=1600"
               alt="ヨガのポーズをとる人"
               fill
               className="object-cover"
@@ -237,19 +248,19 @@ export default function Home() {
                   name: "佐藤 美咲",
                   role: "ヨガインストラクター",
                   message: "ヨガを通じて、皆さんの心と体のバランスを整えるお手伝いをします。初心者の方も安心してご参加ください。",
-                  image: "/placeholder.svg?height=400&width=400"
+                  image: "/instructor1.jpg?height=400&width=400"
                 },
                 {
                   name: "田中 健太",
                   role: "パワーヨガ専門",
                   message: "体の強さと柔軟性を同時に高めるパワーヨガで、新しい自分を発見しましょう。一緒に限界を超えていきましょう。",
-                  image: "/placeholder.svg?height=400&width=400"
+                  image: "/instructor2.jpg?height=400&width=400"
                 },
                 {
                   name: "山本 恵",
                   role: "ヨガニドラ専門",
                   message: "深いリラクゼーションを体験できるヨガニドラで、日常のストレスから解放されましょう。心の平穏を取り戻す旅へご案内します。",
-                  image: "/placeholder.svg?height=400&width=400"
+                  image: "/instructor3.jpg?height=400&width=400"
                 }
               ].map((instructor, index) => (
                 <div key={index} className="bg-white rounded-lg overflow-hidden shadow-sm">
@@ -277,11 +288,11 @@ export default function Home() {
           <div className="container max-w-full">
             <h2 className="text-3xl font-bold text-center mb-12">スタジオギャラリー</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {Array.from({ length: 8 }).map((_, index) => (
+              {galleryImages.map((image, index) => (
                 <div key={index} className="aspect-square relative rounded-lg overflow-hidden">
                   <Image
-                    src={`/placeholder.svg?height=400&width=400&text=Gallery+${index + 1}`}
-                    alt={`スタジオの様子 ${index + 1}`}
+                    src={image.src}
+                    alt={image.alt}
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-300"
                   />
